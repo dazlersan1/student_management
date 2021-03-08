@@ -1,0 +1,72 @@
+<!doctype html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+{% load static %}
+<html>
+<head>
+	<title>Pilot</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+
+
+<style type="text/css">
+	ul.nav{
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden;
+		background-color: #ff8c69;
+	}
+	ul.nav li{
+		float: right;
+	}
+	ul.nav li a {
+  		display: block;
+  		color: white;
+  		text-align: center;
+  		padding: 14px 16px;
+  		text-decoration: none;
+  		background-color: #008080;
+  		font-size: 20px;
+	}
+	ul.nav li a:hover:not(.active){
+		background-color: #ff80ff;
+	}
+	ul.nav li.logo{
+		float:left;
+		font-size: 20px;
+		padding: 14px 16px;
+	}
+	ul.nav li.display{
+		float: left;
+
+		font-size: 20px;
+		padding: 14px 16px;
+		padding-left: 550px;
+	}
+
+
+	@media screen and (max-width: 600px) {
+		ul.nav li.logo,
+  		ul.nav li {float: none;}
+  		ul.nav li.logo{text-align: center;font-size: 30px;}
+  		ul.nav li.display{display: none;}
+  	}
+</style>
+<body>
+	{% block content %}
+	<ul class="nav">
+		<li class = "logo">PSG ITECH</li>
+		<li class = "display">Hello, {{user.username}}</li>
+		<li><a href="/logout">log out</a></li>
+		<li><a href="#">Generate white card</a></li>
+		<li><a href="#">Edit profile</a></li>
+	</ul>
+	
+	
+</body>
+
+</html>
+{% endblock %}
